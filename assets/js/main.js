@@ -43,7 +43,7 @@ createApp({
         }
     },
     created(){
-        this.autoScrolling()
+        this.auto()
     },
     methods:{
         thumbOn() {
@@ -74,12 +74,12 @@ createApp({
             this.currentActive = index;
             this.thumbOn();
         },
-        autoScrolling() {
+        auto() {
             this.autoscroll = setInterval( ()=>{
                 this.next()
             }, 3000)
         },
-        noMoreScrolling() {
+        stop() {
             clearInterval( this.autoscroll)
             this.autoscroll = null
         },
