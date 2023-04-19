@@ -18,7 +18,7 @@
 
         <div class="container">
 
-            <div class="main-img"> 
+            <div class="main-img" @mouseover="noMoreScrolling" mouseleave="autoScrolling"> 
                 <div class="item">
                     <img :src="slides[currentActive].image" :alt="slides[currentActive].title">
                     <div class="title">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="thumbs">
+            <div class="thumbs" @mouseover="noMoreScrolling" mouseleave="autoScrolling">
                 <div class="thumb" v-for="(poster, index) in slides" @click="thumb(index)" :class="{selected: poster.active }">
                     <img :src="poster.image" :alt="poster.title" />
                 </div>

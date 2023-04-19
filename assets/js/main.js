@@ -79,6 +79,10 @@ createApp({
                 this.next()
             }, 3000)
         },
+        noMoreScrolling() {
+            clearInterval( this.autoscroll)
+            this.autoscroll = null
+        },
     },
 
 }).mount('#app')
