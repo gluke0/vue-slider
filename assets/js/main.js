@@ -42,33 +42,33 @@ createApp({
         }
     },
     methods:{
-        thumb() {
-            if(this.slides[this.currentActive].active == true) {
+        thumbOn() {
+            if(this.slides[this.currentActive].active === true) {
                 this.slides[this.currentActive].active = false;
             } else {
                 this.slides[this.currentActive].active = true;
             }
         },
         back() {
-            this.thumb();
+            this.thumbOn();
             this.currentActive--;
             if(this.currentActive < 0) {
                 this.currentActive = this.slides.length - 1;
             }
-            this.thumb();
+            this.thumbOn();
         },
         next() {
-            this.thumb();
+            this.thumbOn();
             this.currentActive++;
             if(this.currentActive === this.slides.length) {
                 this.currentActive = 0;
             }
-            this.thumb();
+            this.thumbOn();
         },
-        selected(index) {
-            this.thumb();
+        thumb(index) {
+            this.thumbOn();
             this.currentActive = index;
-            this.thumb();
+            this.thumbOn();
         }
     }
 }).mount('#app')
